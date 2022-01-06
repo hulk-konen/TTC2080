@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Nimitulostin</title>
+ </head>
+
+ <body>
+  <h1>Nimitulostin</h1>
+
+ <form id="f">
+  Etunimi<br>
+  <input type="text" id="etunimi"><br>
+  Sukunimi<br>
+  <input type="text" id="sukunimi"><br><br>
+  <button type="button" onclick="tulostanimi(f.etunimi.value, f.sukunimi.value)">
+  Tulosta nimi
+  </button>
+ </form>
+
+ <div id="results"></div>
+
+  <script>   
+
+  function tulostanimi(a, b) {  
+   var div = document.getElementById("results"); 
+   div.innerHTML = "<h3>" + a + " " + b + "</h3>";
+  } 
+
+  </script>
+
+ </body>
+</html>

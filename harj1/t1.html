@@ -1,0 +1,36 @@
+<!--
+Kirjoita HTML-tiedostoon JavaScript-ohjelma, jossa on
+ määritelty muuttujat var v1 = "Haloo" ja var v2 = "Maailma!". 
+ Ohjelmasi muodostaa ao. muuttujista merkkinonon 
+ <h1>Haloo Maailma!</h1> sijoittaen tuloksen muuttujaan 
+ tulos ja näyttää tuloksen P-elementissä 
+ getElementById/innerHTML-yhdistelmää käyttäen. 
+ Muuttujan tulos sisältö tulostetaan myös selaimen 
+ web-konsoliin (console.log).
+
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+
+<body>
+
+<p id="paikka"></p>
+
+<script>
+
+    var v1 = 'Haloo';
+    var v2 = 'Maailma!';  
+    var tulos = "<h1>" + v1 + " " + v2 + "</h1>";
+    console.log(tulos)
+    document.getElementById("paikka").innerHTML = tulos;
+
+</script>
+</body>
+</html>
