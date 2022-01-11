@@ -1,0 +1,38 @@
+<!-- t5
+    Tee funktio, jolle voidaan välittää parametrina
+     kokonaislukuja sisältävä taulukko. Funktion
+      tulee tutkia mitkä luvuista ovat parillisia 
+      ja palauttaa nämä luvut taulukkona. Funktiota 
+      kutsuvan ohjelman tulee tulostaa määritelty 
+      alkuperäinen taulukko ja uusi vain parillisia 
+      lukuja sisältävä taulukko web-konsolille.
+
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function parilliset(a) {
+    var parit = [];
+    for (var i = 0; i < a.length; i++) {
+    if(a[i] % 2 === 0) { 
+        parit.push(a[i]);
+    }
+    }
+    return parit
+}
+</script>
+</head>
+
+<body>
+    <script>
+        var yksi = [6, 2, 4, 1, 3, 5, 8, 12, 11];
+        console.log("alkuprainen", yksi);
+        console.log("parilliset", parilliset(yksi));
+    </script>
+</body>
+</html>

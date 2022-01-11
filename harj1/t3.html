@@ -1,0 +1,31 @@
+<!-- 
+Tehtävä 3 [2p]
+Määrittele sovellukseesi taulukko, 
+jossa on seuraavat sanat: 
+["JavaScriptin", "opiskelu", "on", "ihanaa!"]. 
+Muodosta taulukon sanoista lause käyttämällä toistolausetta. 
+Tulosta web-konsolille muodostunut lause.
+
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+<script>
+    var taulukko = ["JavaScriptin", "opiskelu", "on", "ihanaa!"];
+    var lause = "";
+
+    for(let sana of taulukko) {
+        lause = lause + " " + sana;
+    }
+    console.log(lause);  
+</script>
+</body>
+</html>

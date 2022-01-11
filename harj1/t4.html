@@ -1,0 +1,41 @@
+<!-- t4
+Tee funktio, jolle voidaan välittää parametrina kolme
+lukua. Funktion tulee tulostaa web-konsolille luvuista suurin.
+
+Määrittele käyttöösi kolme muuttujaa ja 
+tulosta niiden arvot web-konsolille. 
+Kutsu tekemääsi funktiota, joka 
+tulostaa luvuista suurimman web-konsolille.
+
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function tulostaIsoin(a, b, c) {
+    var isoin = a;
+    if (b > isoin) {
+        isoin = b
+    }
+    if (c > isoin) {
+        isoin = c;
+    }
+    console.log(isoin);
+}
+</script>
+</head>
+
+<body>
+    <script>
+        var yksi = 1;
+        var kaksi = 2;
+        var kolme = 3;
+        console.log(yksi, kaksi, kolme);
+        tulostaIsoin(yksi, kaksi, kolme);
+    </script>
+</body>
+</html>
