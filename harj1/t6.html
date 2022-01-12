@@ -26,9 +26,10 @@ tulosrivit sisältö tulee muodostaa for-rakenteella.
 </head>
 
 <body>
-
+    <h1> JavaScript taulukon läpikäynti </h1>
+    <p> for ja for ... of silmukoilla </p>
+    <hr>
     <p id="paikka"></p>
-    <p id="paikka2"></p>
 
 <script>
     let taulukko = [11, 22, 33, 44];
@@ -42,12 +43,19 @@ tulosrivit sisältö tulee muodostaa for-rakenteella.
         summa = summa + alkio;
     }
     for(let alkio of taulukko) {
-        tulosrivit = tulosrivit + alkio;
+        tulosrivit = tulosrivit + "taulukko[" + (alkio) + "]" + " = " + alkio + "<br>";
     }
-    console.log(lukumaara, summa);  
-    document.getElementById("paikka").innerHTML = summa;
-    document.getElementById("paikka2").innerHTML = tulosrivit;
 
+    valiarvo = summa / lukumaara;
+    keskiarvo = valiarvo.toFixed(1);
+
+    console.log(lukumaara, summa);  
+
+    let osio = document.getElementById("paikka");
+    osio.innerHTML = "Alkiot ovat:<br><br>" + tulosrivit + 
+        "<br> Lukumäärä on: " + lukumaara +
+        "<br> Summa on: " + summa +
+        "<br> Keskiarvo on: " + keskiarvo;
 
 </script>
 </body>
