@@ -42,9 +42,13 @@ tulosrivit sisältö tulee muodostaa for-rakenteella.
         lukumaara = lukumaara + 1;
         summa = summa + alkio;
     }
-    for(let alkio of taulukko) {
-        tulosrivit = tulosrivit + "taulukko[" + (alkio) + "]" + " = " + alkio + "<br>";
+
+
+    for (let i = 0; i < taulukko.length; i++) {
+        tulosrivit += "taulukko[" + [i] + "]" + " = " + taulukko[i] + "<br>";
     }
+
+
 
     valiarvo = summa / lukumaara;
     keskiarvo = valiarvo.toFixed(1);
