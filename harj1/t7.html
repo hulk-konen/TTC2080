@@ -1,0 +1,59 @@
+<!--
+    Tee JavaScript-ohjelma joka tulostaa web-sivulle,
+     onko käyttäjän tekstinsyöttökentään syöttämä
+      vuosiluku karkausvuosi vai ei. Karkausvuoden 
+      tarkistus tulee tehdä funktiolla, jolle voidaan 
+      välittää parametrina vuosiluku. Funktion tulee 
+      palauttaa true-arvo, jos vuosi on karkausvuosi 
+      ja false-arvo, jos vuosi ei ole karkausvuosi. 
+      Syötteen oikeamuotoisuutta ei tarvitse tarkistaa.
+
+Algoritmi: 4:llä jaolliset on, paitsi täydet 
+vuosisadat. Kuitenkin 400:lla jaolliset vuosisadat ovat.
+
+Esimerkki tulostuksesta:
+
+1991 -> ei ole karkausvuosi
+1992 -> on karkausvuosi
+1900 -> ei ole karkausvuosi
+2000 -> on karkausvuosi
+
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Karkausvuosilaskuri</h3>
+
+<input type="number" id="vuosi" value="2000">
+
+<p>Paina nappia tarkistaaksesi onko vuosi karkausvuosi</p>
+
+<button onclick="yearTest(vuosi.value)">Kokeile</button>
+
+<p id="testinPaikka"></p>
+
+<script>
+let tulostus = ""
+function yearTest(a) {
+    if (a % 400 === 0) {
+        tulostus = a + " -> on karkausvuosi";
+        document.getElementById("testinPaikka").innerHTML = tulostus;
+        return true;
+    } else if (a % 4 === 0) {
+        tulostus = a + " -> on karkausvuosi"
+        document.getElementById("testinPaikka").innerHTML = tulostus;
+        return true
+    } else {
+        tulostus = a + " -> ei ole karkausvuosi"
+        document.getElementById("testinPaikka").innerHTML = tulostus;
+        return false
+    }
+}
+</script>
+</body>
+</html>
