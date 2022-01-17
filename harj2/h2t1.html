@@ -1,0 +1,56 @@
+<!--
+    Toteuta JavaScriptillä oheisen kuvan
+     mukainen kahden luvun yhteenlaskin. 
+     tulostaSumma(a, b)-funktio ottaa 
+     parametrinaan lomakkeen kenttiin syötetyt
+      luvut (merkkijonot) ja tulostaa lopputuloksen
+       div-elementtiin (id=results). tulostaSumma(a, b)-funktio
+        käyttää summan laskemiseen laskeSumma(a, b)-funktiota,
+         joka palauttaa (return) summan kokonaislukuna. 
+         Lomakkeen voit määritellä esim.
+
+<form id="f">
+     <input type=text id="n1"><br>
+     <input type=text id="n2"><br>
+     <button type="button" onclick="tulostaSumma(f.n1.value, f.n2.value)">Laske</button>
+  </form>
+
+
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+<script>
+function laskeSumma(a, b) {
+    c = parseInt(a);
+    d = parseInt(b);
+    e = c + d;
+    return e;
+}
+
+function tulostaSumma(a, b) {
+    laskuri = laskeSumma(a, b);
+    document.getElementById("results").innerHTML = "summa = " + laskuri;
+}
+</script>
+</head>
+
+<body>  
+<h1>Laske luvut yhteen</h1>
+<form id="f">
+    <input type=text id="n1"><br>
+    <input type=text id="n2"><br>
+    <button type="button" onclick="tulostaSumma(f.n1.value, f.n2.value)">Laske</button>
+ </form>
+
+ <div id="results">
+
+ </div>
+
+</body>
+</html>

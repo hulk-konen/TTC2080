@@ -1,0 +1,44 @@
+
+
+  <!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+
+<body>  
+
+<script>
+
+function Car(malli) {
+    // public property
+    this.model  =    malli;
+  
+    // private variable (voi käyttää vain tässä scopessa)
+    var carColor = "Red";
+    // public setter and getter  methods
+    this.getColor = function(){
+    return carColor;
+  
+   }
+   this.setColor = function(color) {
+     carColor = color;
+   }
+  }
+  
+  // Luodaan uusi auto
+  var ford = new Car("Ford");
+  console.log(ford.model); // Ford
+  console.log(ford.getColor()); // Red
+  ford.setColor("Blue");
+  console.log(ford.getColor()); // Blue
+  
+  // Testataan private-variable
+  console.log(ford.carColor); // Määrittelemätön
+  
+  // Testataan carColor, ei global scope
+  console.log(carColor); // Määrittelemätön
+
+</script>
+</body>
+</html>

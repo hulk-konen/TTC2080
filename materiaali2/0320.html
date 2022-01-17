@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+<script>
+class Person {
+    constructor(name, height, weight) {
+      this.name = name;
+      this.height = height;
+      this.weight = weight;
+    }
+    // Getter
+    get bmi() {
+      return this.calcBmi();
+    }
+  
+    // Setter
+    set pituus(h) {
+      this.height = h;
+    }
+  
+    // Metodi
+    calcBmi() {
+      return this.weight/(this.height/100 * this.height/100);
+    }
+  }
+  
+  const kim = new Person("Alainen Kim", 290, 90);
+  kim.pituus = 190;
+  console.log (kim.name, kim.height, kim.weight, kim.bmi);
+  
+  /*
+  Tulostaa:
+  "Alainen Kim"
+  190
+  90
+  24.930747922437675
+  */
+</script>
+</body>
+</html>
+

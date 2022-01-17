@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+
+<body>  
+
+<script>
+
+function fn1(name) {
+    alert('Terve ' + name);
+  }
+  
+function fn2(name) {
+    document.write('Terve ' + name);
+  }
+  
+function lueSyote(callbackfunktio) {
+    var name = prompt('Kirjota nimesi');
+    callbackfunktio(name); // Kutsutaan kutsussa annettua funktiota
+  }
+  
+  lueSyote(fn2); // Tässä valitaan syötteen käsittelijäfunktio
+                 // Kokeile myös kutsulla: lueSyote(fn2)
+
+
+</script>
+</body>
+</html>

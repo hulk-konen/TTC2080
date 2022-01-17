@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+<script>
+function summaa(...luvut) { // Muuntaa annetun listan tauluksi
+    console.log(luvut);
+    let tulos = 0;
+    for(let i = 0; i < luvut.length; i++) {
+      tulos += luvut[i];
+    }
+    return tulos;
+  }
+  
+  console.log(summaa(10,20,30)); // Lista
+  
+  // Tulostaa:
+  // [10, 20, 30]
+  // 60
+</script>
+</body>
+</html>

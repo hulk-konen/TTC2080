@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+
+<body>  
+
+<script>
+
+// Perinteinen nimetty funktio
+function fn(a) { return a; }
+
+// Perinteinen anonyymi funktio
+let afn = function (a) { return a; }
+
+// Nuolifunktio
+let lfn1 = (a) => a;
+
+// Nuolifunktio: Jos yksi parametri, sulut saa jättää pois
+let lfn2 = a => a;
+
+console.log(fn("From fn"));     // "From fn"
+console.log(afn("From afn"));   // "From afn"
+console.log(lfn1("From lfn1")); // "From lfn1"
+console.log(lfn2("From lfn2")); // "From lfn2"
+
+
+// Nuolifunktio: Ei parametreja, tyhjät sulut
+let lfn3 = () => {console.log("From lfn3");};
+lfn3(); // "From lfn3"
+
+// Nuolifunktio: Useat parametrit normaalisti
+let lfn4 = (a, b) => a + b;
+console.log(lfn4(-1, 5)); // Tulostaa: 4
+
+// Nuolifunktiokin voi
+// suorittaa useita lauseita
+let lfn5 = () => {
+  console.log("From lfn5 row 1");
+  console.log("From lfn5 row 2");
+};
+
+lfn5(); // "From lfn5 row 1"
+        // "From lfn5 row 2"
+
+//Tulostaa "Haloo" (1 sec kuluttua)
+setTimeout(() => console.log("Haloo"), 2000);
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Karkausvuosilaskuri</h3>
+
+<input type="number" id="vuosi" value="2000">
+
+<p>Paina nappia tarkistaaksesi onko vuosi karkausvuosi</p>
+
+<button onclick="yearTest(vuosi.value)">Kokeile</button>
+
+<p id="testinPaikka"></p>
+
+<script>
+let tulostus = ""
+function yearTest(a) {
+    if (a % 400 === 0) {
+        tulostus = "karkausvuosi";
+        document.getElementById("testinPaikka").innerHTML = tulostus;
+        return true;
+    } else if (a % 4 === 0) {
+        tulostus = "karkausvuosi2"
+        document.getElementById("testinPaikka").innerHTML = tulostus;
+        return true
+    } else {
+        tulostus = "ei"
+        document.getElementById("testinPaikka").innerHTML = tulostus;
+        return false
+    }
+}
+
+</script>
+
+</body>
+</html>
+

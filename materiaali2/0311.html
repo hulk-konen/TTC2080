@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+<script>
+function fn1(n1, n2 = 2) {
+    return n1 == n2;
+  }
+  
+  console.log(fn1(3)); // false
+  console.log(fn1(2)); // true
+  
+  // ----------------------------------------
+  
+  function fn2(n1, n2 = n1) {
+    console.log(n1); // 4
+    console.log(n2); // 5
+    return n1 == n2;
+  }
+  
+  console.log(fn2(4, 5)); // false, koska sijoitus n2 = n1
+                          // on vain oletusarvo
+  
+  // ----------------------------------------
+  
+  function fn3(n1 = n2, n2 = 42) {
+    return n1 == n2;
+  }
+  
+  console.log(fn3()); // Error, koska parametrit käsitellään
+                      // järjestyksessä n2 not-defined, kun sitä
+                      // yritetään käyttää ekan kerran
+
+</script>
+</body>
+</html>

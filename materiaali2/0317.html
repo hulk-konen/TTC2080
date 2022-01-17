@@ -1,0 +1,55 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+<script>
+let luvut = [1, 2, 3];
+
+let [n1, n2, n3] = luvut;
+console.log(n1); // 1
+console.log(n2); // 2
+console.log(n3); // 3
+
+// Esimerkki 0318
+
+let luvut2 = [1,2,3]
+let [a,...b] = luvut2;
+
+console.log(b); // [2, 3]
+
+//0319
+
+let olio = {
+  nimi: 'Ari',
+  ika: 53
+};
+
+ // nimi-kentän uudelleennimäminen -> name
+
+let { nimi3: name, ika3 } = olio; // name on uusi aliasnimi
+
+console.log(name); // "Ari"
+console.log(ika3); // "53"
+console.log(nimi3); // "error" (ei määritelty)
+
+//Esimerkki 0320
+
+let d = {
+  nimi: 'Ari',
+  ika: 53,
+  fn: function() {
+    console.log('Haloo');    
+  }
+
+};
+
+//let {nimi, ,fn} = d;
+fn(); // Error, koska objektin kentillä EI järjestystä
+</script>
+</body>
+</html>

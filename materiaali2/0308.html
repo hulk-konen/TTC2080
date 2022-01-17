@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+
+<body>
+<button>Klikkaa</button>
+</body>
+
+<script>
+var btn = document.querySelector('button');
+
+var anofn = function () {
+  return console.log(this);
+}
+//JS:
+var nuolifn = () => console.log(this);
+
+//btn.addEventListener('click', anofn);
+btn.addEventListener('click', nuolifn);
+
+</script>
+</body>
+</html>

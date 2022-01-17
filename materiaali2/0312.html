@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+<script>
+let nimi = 'Sepi';
+let ika = 53;
+
+let olio = {
+    nimi : 'Ari',
+    ika,
+    fn() {
+    console.log(this.nimi + ', ' + this.ika)
+}
+}
+
+console.log(olio);  /* Tulostaa:
+                      [object Object] {
+                        ika: 53,
+                        nimi: "Ari"
+                      }*/
+
+olio.fn(); // "Ari, 53"
+
+let nimi2 = 'Ari';
+let ika2 = 53;
+
+let olio2 = {nimi2, ika2};
+console.log(olio2.nimi2); // "Ari"
+
+
+</script>
+</body>
+</html>

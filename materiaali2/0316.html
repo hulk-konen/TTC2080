@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+</head>
+<script>
+let nimi = 'Arska';
+let loitsu = `
+Helou, I'm ${nimi}
+Helou, I'm ${nimi + ' - Raaka Arska!'}
+Helou, I'm \${nimi + ' - Raaka Arska!'}
+`;
+console.log(loitsu);
+
+/* Viimeinen lause tulostaa:
+"
+Helou, I'm Arska
+Helou, I'm Arska - Raaka Arska!
+Helou, I'm ${nimi + ' - Raaka Arska!'}
+"
+*/
+</script>
+</body>
+</html>
