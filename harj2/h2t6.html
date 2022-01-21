@@ -1,0 +1,132 @@
+<!--
+Toteuta JavaScriptillä oheisen kuvan mukainen 
+vauhtilaskin. Ohjelma laskee syötettyjen arvojen
+ perusteella liikkujalle sekä km/h- että min:sec/km-vauhdin.
+  Tulokset näytetään kahden desimaalin tarkkuudella. 
+  Lomakkeessa tulee olla syötteille sopivat oletusarvot
+   ja niille ei tarvitse tehdä tarkistuksia.
+    Erikoisille syötteille ei tarvitse myöskään 
+    muotoilla tulostuksia, vauhti voidaan tulostaa vaikka 3456:45/km
+
+Toteutus tulee tehdä Vauhtilaskin-luokkana c
+lass-määreellä määriteltynä. Syötetyt 
+arvot tulee asettaa constructor-metodissa
+ luokasta luotavan olion ominaisuuksiksi.
+  Vauhdit tulee laskea metodeilla calcKmhPace()
+   ja calcMinkmPace(). Vauhdit palauitetaan
+    "getter"-metodeilla kmhpace() ja 
+    minkmpace(). Käyttöliittymästä tulee 
+    löytyä oheisessa kuvassa nähdyt osat, 
+    mutta ulkoasu on vapaa - halutessasi hyvin yksinkertainen.
+
+
+
+HUOM: Yllä kuvassa ilmaisu 3:40/km 
+tarkoittaa 3 minuuttia ja 40 sekuntia per kilometri.
+
+Laskennassa voit googlauksen 
+lisäksi hyödyntää suoraan seuraavia koodisnipettejä:
+
+// kmh-laskentaa
+var tunnit = parseInt(h)+(parseInt(min)*60+parseInt(sec))/3600;
+var kmh = kilometrit/tunnit;
+...
+
+// min.sec/km-laskentaa
+var sekunnit = parseInt(h)*60*60+parseInt(min)*60+parseInt(sec);
+sekunnitPerKm = sekunnit/km;
+
+var minutes = 0;
+
+while (sekunnit >= 60){
+  minutes++;
+  sekunnit = sekunnit - 60;
+}
+sekunnit = Math.round(sekunnit);
+sekunnit = String('0'+ sekunnit).slice(-2);
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+<script>
+
+class Vauhtilaskin {
+    constructor(h = 0, min = 0, sec, km){
+    this.h = h;
+    this.min = min;
+    this.sec = sec;
+    this.km = km;
+}
+
+calcKmhPace() {
+    var tunnit = parseInt(this.h)+(parseInt(this.min)*60+parseInt(this.sec))/3600;
+    var kilometrit = parseInt(this.km);
+    var kmh = kilometrit/tunnit;
+    kmh = +kmh.toFixed(2);
+
+    console.log(kmh);
+    document.getElementById("results").innerHTML = kmh + " km/h";
+    return kmh;
+}
+calcMinkmPace() {
+    var sekunnit = parseInt(this.h)*60*60+parseInt(this.min)*60+parseInt(this.sec);
+    var kilometrit = parseInt(this.km);
+    var sekunnitPerKm = sekunnit/kilometrit;
+    var minutes = 0;
+
+    while (sekunnitPerKm >= 60){
+        minutes++;
+        sekunnitPerKm = sekunnitPerKm - 60;
+    }
+
+
+    sekunnitPerKm = Math.round(sekunnitPerKm);
+    sekunnitPerKm = String('0'+ sekunnitPerKm).slice(-2);
+    console.log(minutes, sekunnitPerKm);
+    document.getElementById("results2").innerHTML = minutes + ":" + sekunnitPerKm + " per km";
+    return sekunnitPerKm;
+
+    }
+
+
+get kmhpace() {
+    return this.calcKmhPace();
+}
+
+get minkmpace() {
+    return this.calcMinkmPace();
+}
+}
+
+function laskuri(t, m, s, k) {
+
+    vauhdit = new Vauhtilaskin(t, m, s, k);
+    vauhdit.kmhpace;
+    vauhdit.minkmpace;
+}
+
+</script>
+</head>
+
+<body>  
+    <h1>Vauhtilaskin</h1>
+    <form id="f">
+        Tunnit: <input type=text id="h"><br>
+        Minuutit: <input type=text id="min"><br>
+        Sekunnit: <input type=text id="sec"><br>
+        Kilometrit: <input type=text id="km"><br>
+        <button type="button" onclick="laskuri(f.h.value, f.min.value, f.sec.value, f.km.value)">Laske vauhdit</button>
+     </form>
+    
+     <div id="results"></div>
+     <div id="results2"></div>
+
+</body>
+</html>
+

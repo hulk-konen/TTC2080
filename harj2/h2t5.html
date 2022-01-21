@@ -1,0 +1,112 @@
+<!--
+Tee Person-funktio, jota kutsumalla voidaan 
+luoda esim. person-olio, jolla on ominaisuudet: 
+
+name, age, phone ja email. 
+
+Luotavalla oliolla tulee olla myös metodi, 
+jonka jokaisella kutsukerralla olion age-muuttujan 
+arvo kasvaa yhdellä. Luo Person-funktiota käyttäen 
+ainakin kolme eri oliota eri tiedoilla.
+ Tulosta tiedot web-konsolille.
+
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>t1</title>
+<script>
+
+function Person(nimi) {
+  // public property
+    this.name = nimi;
+  // private variable (voi käyttää vain tässä scopessa)
+    var age = 20;
+    var phone = "";
+    var email = "";
+ // public setter and getter  methods
+    this.getAge = function(){
+        return age;
+    }
+    this.setAge = function(ika) {
+        age = ika;
+    }
+    this.getPhone = function(){
+        return phone;
+    }
+    this.setPhone = function(numero) {
+        phone = numero;
+    }
+    this.getEmail = function(){
+        return email;
+    }
+    this.setEmail = function(sposti) {
+        email = sposti;
+    }
+    this.alterAge = function() {
+        age ++;
+    }  
+
+}
+
+</script>
+</head>
+
+<body>  
+<script>
+
+
+
+// Luodaan persoonat
+var ford = new Person("Ford");
+ford.setAge(30);
+ford.setPhone(0142014);
+ford.setEmail("ford@sd.com");
+
+var tanja = new Person("Tanja");
+tanja.setAge(27);
+tanja.setPhone(123);
+tanja.setEmail("tanja@sd.com");
+
+var tommi = new Person("Tommi");
+tommi.setAge(92);
+tommi.setPhone(6688);
+tommi.setEmail("tommi@sd.com");
+
+
+console.log(ford.name);
+console.log(ford.getAge()); 
+ford.alterAge()
+console.log(ford.getAge()); 
+console.log(ford.getPhone());
+console.log(ford.getEmail());
+
+console.log(tanja.name);
+console.log(tanja.getAge()); 
+tanja.alterAge()
+console.log(tanja.getAge()); 
+console.log(tanja.getPhone());
+console.log(tanja.getEmail());
+
+console.log(tommi.name);
+console.log(tommi.getAge()); 
+tommi.alterAge()
+console.log(tommi.getAge()); 
+console.log(tommi.getPhone());
+console.log(tommi.getEmail());
+
+
+
+// Testataan private-variable
+
+// Testataan carColor, ei global scope
+
+
+</script>
+
+</body>
+</html>

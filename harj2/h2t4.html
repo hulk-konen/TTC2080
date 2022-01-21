@@ -26,3 +26,40 @@ Palautus
 
 Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    tulostus = "";
+    const print = (str, taskTime) => {
+    setTimeout(function() {
+        tulostus = tulostus + `${str}` + "<br>";
+        document.getElementById("konsertti").innerHTML = tulostus;
+    }, taskTime)
+  }
+  
+    const execute = (str, taskTime, callback)  => {  
+        callback(str, taskTime);
+  }
+  
+    </script>
+</head>
+<body>
+
+<h1>Lady Gaga</h1>
+
+
+<p id="konsertti"></p>
+
+<script>
+
+  execute('OMG - Lady Gaga start singing!', 0, print);
+  execute('NICE - fireworks!', 500, print);
+  execute('NICE - fireworks!', 1000, print);
+  execute('NICE - fireworks!', 1500, print);
+  execute('WOW - It was the best concert in my life...', 2000, print);
+
+</script>
+</body>
+</html>
