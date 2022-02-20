@@ -1,0 +1,20 @@
+//HTML:
+<form id="f">
+   <input type="text" id="n"><br>
+   <button type="button" onclick="tulostaLuku(f.n.value)"> //inputin arvo
+     Tulosta luku
+   </button>
+</form>
+
+<div id="results"></div>
+
+//JS:
+<script>   
+
+  function tulostaLuku(a) {  
+   var div = document.getElementById("results");
+   // a on alkuperäisen inputin arvo:
+   div.innerHTML = "Luku= " + a + "<br>";
+    } 
+
+</script>

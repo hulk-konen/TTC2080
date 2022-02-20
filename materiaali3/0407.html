@@ -1,0 +1,11 @@
+<ul id="demolist">
+<li>Eka</li>
+<li>Toka</li>
+</ul>
+
+<script>
+var list = document.getElementById("demolist");
+while(list.hasChildNodes()) {
+    list.removeChild(list.firstChild);
+}
+</script>

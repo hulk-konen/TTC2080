@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Otsikko</h2>
+<p>Kappale 1</p>
+<p class="sini">Kappale 2</p> <!-- sininen tausta -->
+<p class="sini">Kappale 3</p> <!-- sininen tausta -->
+
+<script>
+let elem = document.querySelectorAll("p.sini");
+for (i = 0; i < elem.length; i++) {
+    elem[i].style.backgroundColor = "blue";
+} 
+
+</script>
+
+</body>
+</html>

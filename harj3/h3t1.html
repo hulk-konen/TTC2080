@@ -1,0 +1,37 @@
+<!--
+    Toteuta JavaScriptillä oheisen kuvan 
+    mukainen ohjelma. Linkkitekstejä hiirellä 
+    klikattaessa alla olevassa tilassa näkyvän 
+    kuvan paikalle vaihdetaan linkkitekstiä 
+    vastaava kuva. Oletuksena näytetään kuva1.
+     Kolme linkkitekstiä ja niitä vastaavaa pientä kuvaa riittää.
+
+
+-->
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>T1</title>
+  <script>
+    document.getElementById("image").src="hinta.png";
+    function fn1(a) {
+        if (a == 1) {
+        document.getElementById("image").src="hinta.png";
+        } else if (a == 2) {
+        document.getElementById("image").src="maat.png";
+        } else if (a == 3) {
+        document.getElementById("image").src="tulokset.png";
+        }
+    }
+    </script>
+</head>
+<body>
+<p style="text-align: center;">
+<a href="#1" onclick="fn1(1)">Kuva 1</a> | <a href="#2" onclick="fn1(2)">Kuva 2</a> | <a href="#3" onclick="fn1(3)">Kuva 3</a>
+</p>
+<img id="image" src="hinta.png">
+</body>
+</html>

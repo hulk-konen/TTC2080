@@ -1,0 +1,94 @@
+<!--
+    Luo JavaScriptillä oheisen kuvan 
+    mukainen sovellus. Toimintoja ovat:
+
+Valinnan vaihtaminen pudotusvalikossa 
+tulostaa valitun värikoodin tulosalueelle,
+ mutta ei muuta tulosalueen taustaväriä.
+"Mikä juhla" -tekstilaatikkoon kirjoitettu 
+teksti päivittyy reaaliajassa kirjoittamisen 
+edetessä tulosalueen alimmalle riville. 
+Tekstin syöttökenttään EI hyväksytä syötteeksi numeroita.
+Pudotusvalikosta valittu taustaväri vaihdetaan 
+tulosalueen taustaväriksi klikkaamalla 
+"Vaihda valittu taustaväri"-painiketta.
+Luo itse sopivat funktiot ja tapahtumakuuntelijat 
+toivottujen toimintojen aikaansaamiseksi
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo</title>
+
+<script>
+
+function tulostaVari() {  
+   var p = document.getElementById("results");
+   
+   p.innerHTML = valikko.value; // valitun arvo
+
+}
+
+function muutaVari() {  
+   var div =document.getElementById("alue")
+
+   if (valikko.selectedIndex == 1) { // Toinen vaihtoehto "selected"
+    div.style.backgroundColor = "yellow";
+   }
+}
+// real time teksti
+
+function tekstitys() {
+    let tekstiPaikka = document.getElementById('text-block');
+    let tekstiKirjoita = document.getElementById('text-value');
+
+    tekstiPaikka.innerHTML = tekstiKirjoita.value;
+
+}
+
+
+</script>
+
+</head>
+<body>
+<p>Valitse juhlaväri</p>
+<select id="valikko">
+  <option value="Valitse eurot, Please!">Valitse väri</option>
+  <option value="yellow">yellow</option>
+  <option value="31">31 euroa</option>
+</select>
+
+
+<p>Mikä juhla</p>
+<form id="f">
+<input type="text" id="text-value">
+</form>
+<!-- This is a comment
+<button type="button" onclick="lisaa(this.parentElement)">
+
+</button> 
+ -->
+
+<button onclick="muutaVari()" style="margin: 10px 0">
+    Vaihda valittu taustaväri
+</button>
+
+<div id="alue" style="border: 1px dotted blue; padding: 30px;">
+Tulostusalue
+
+<p id="text-block"></p>
+<p id="results"></p>
+
+
+</div>
+</body>
+<script>
+var teksti = document.getElementById('f');
+teksti.addEventListener('keyup', tekstitys);
+
+var variTeksti = document.getElementById('valikko');
+variTeksti.addEventListener('change', tulostaVari);
+
+</script>
+</html>

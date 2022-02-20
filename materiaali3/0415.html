@@ -1,0 +1,17 @@
+//HTML:
+<form id="f">
+   <input type="text" id="n"><br>
+   <button type="button" onclick="tulostaLuku(this.parentElement)">
+        Tulosta luku
+    </button>
+</form>
+<div id="results"></div>
+
+//JS:
+<script>   
+  function tulostaLuku(target) {  
+     var div = document.getElementById("results");
+     // target on lomake ja n sen kenttä
+     div.innerHTML = "Luku= " + target.n.value + "<br>";
+   } 
+</script>

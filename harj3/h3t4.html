@@ -1,0 +1,72 @@
+<!--
+    Luo JavaScriptillä oheisen kuvan 
+    mukainen SimpleToDo-sovellus,
+     jonka ul-elementti (id="lista") on 
+     sivun latauksen jälkeen tyhjä. 
+     Lisää-painikkeella listaan voidaan lisätä 
+     tekstikenttään kirjoitettuja tehtäviä (li-elementtejä) 
+     ja Tyhjää lista -painikkeella listan
+      voi tyhjätä alkutilaansa. Toimintojen vaikutukset
+       tulee saada aikaan muokkaamalla dokumentin DOM-puuta.
+
+Lisää sovellukseen ominaisuus,
+ jolla myös yksittäisen tehtävän eli 
+ listan alkion voi poistaa listasta 
+ klikkaamalla yksinkertaisesti tehtävää 
+ listassa. Klikkaus tehtävän poistamiseksi 
+ tulee käsitellä addEventListener-tapahtumankuuntelijametodilla.
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo</title>
+
+<script>
+function lisaa(target) {  
+    let ulnode = document.getElementById("lista");
+    let linode = document.createElement('li');
+    let litext = document.createTextNode(target.n.value);
+
+
+
+    linode.appendChild(litext);
+    ulnode.appendChild(linode);
+    document.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', event => {
+        item.remove();  })
+})
+
+
+
+}
+
+function poistaKaikki() {
+    var list = document.getElementById("todo");
+        while(list.hasChildNodes()) {
+        list.removeChild(list.firstChild);
+}
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>SimpleToDo</h1>
+<form id="f">
+<input type="text" id="n"><br>
+<button type="button" onclick="lisaa(this.parentElement)">
+        Lisää
+</button>
+<button type="button" onclick="poistaKaikki()">
+    Tyhjää lista
+</button>
+</form>
+<ul id="lista"></ul>
+
+</body>
+
+</html>

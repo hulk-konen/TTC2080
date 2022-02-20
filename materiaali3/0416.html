@@ -1,0 +1,28 @@
+//HTML:
+<select id="valikko">
+  <option value="Valitse eurot, Please!">Valitse eurot</option>
+  <option value="13">13 euroa</option>
+  <option value="31">31 euroa</option>
+</select>
+
+<button onclick="tulosta()">
+     Tulosta valittu
+</button>
+
+<div id="results"></div>
+
+//JS:
+<script>
+  function tulosta() {  
+   var div = document.getElementById("results");
+   div.innerHTML = valikko.value; // valitun arvo
+
+   if (valikko.selectedIndex == 1) { // Toinen vaihtoehto "selected"
+      alert("Wau uskalsit valita 13eur!");
+   }
+
+   valikko.options[0].selected = true; // vaihdetaan ensimmäinen
+                                       // vaihtoehto "selected"
+
+} 
+</script>

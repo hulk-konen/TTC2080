@@ -1,0 +1,85 @@
+<!--
+Toteuta web-sivulle JavaScript-ohjelma, 
+joka Tulosta tasoitukset -painiketta klikkaamalla 
+näyttää hcpdata-nimiseen taulukkoon tallennettujen 
+golf-pelaajien tasoitukset seuraavasti
+
+
+
+Rakenna ratkaisu lisäämäällä tarvittava ohjelmakoodisi seuraavaan pohjaan
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tulosta tasoitukset</title>
+
+<script>
+var hcpdata = [{ "name": "Ari", "hcp": 54 },
+               { "name": "Pasi", "hcp": 5 },
+               { "name": "Seppo", "hcp": 20 }];
+</script>
+
+</head>
+<body>
+        <button>Tulosta tasoitukset</button>
+    <ul id="hcplist"></ul>
+</body>
+</html>
+Lisävaatimuksia
+
+Ohjelma toteutetaan HTML- ja JavaScript-tekniikoilla 
+yhteen tiedostoon. Ulkoisten kirjastojen (esim. jQuery) 
+käyttäminen ei ole sallittua.
+Web-sivun ensimmäisellä latauskerralla näytetään vain
+ Tulosta tasoitukset -painike
+Tulosta tasoitukset -painiketta klikkaamalla JavaScript-ohjelma 
+lisää ul-elementtiin li-elementit yllä annetun kuvan mukaan.
+ Li-elementeissä näytettävä teksti luetaan nähdystä 
+ hcpdata-nimisestä taulukosta. Nimen ja tasoituslukeman 
+ välissä tulee olla välilyönti.
+hcpdata-taulukon määrittelyä ei saa muuttaa
+li-elementit tulee luoda käymällä hcpdata-taulukkoa 
+läpi valitsemassasi toistorakenteessa (for, for...of, ...)
+Tulokset lisätään listaan näkyville vain kerran. Jos 
+käyttäjä klikkaa Tulosta tasoitukset -painiketta useamman kerran,
+ niin tuloksia EI tule lisätä listaan toista tai useampaa kertaa
+Palautus
+
+Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tulosta tasoitukset</title>
+
+<script>
+var hcpdata = [{ "name": "Ari", "hcp": 54 },
+               { "name": "Pasi", "hcp": 5 },
+               { "name": "Seppo", "hcp": 20 }];
+
+function tulostaTasoitus() {
+     // target on lomake ja n sen kenttä
+        while(hcplist.hasChildNodes()) {
+            hcplist.removeChild(hcplist.firstChild);}
+
+        for (let i = 0; i < hcpdata.length; i++) {
+            let ulnode = document.getElementById("hcplist");
+            let linode = document.createElement('li');
+            let litext = document.createTextNode(hcpdata[i]["name"] + " " + hcpdata[i]["hcp"]);
+            linode.appendChild(litext);
+            ulnode.appendChild(linode);
+        }
+}
+</script>
+
+</head>
+<body>
+        <button type="button" onclick="tulostaTasoitus()">
+            Tulosta tasoitukset
+        </button>
+    <ul id="hcplist"></ul>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+//HTML:
+<p id="elem">Klikkaa ja pidä hiiri alhaalla</p>
+
+<script>
+class Valikko {
+    handleEvent(event) {
+      switch(event.type) {
+        case 'mousedown':
+          elem.style.backgroundColor = "yellow";
+          elem.innerHTML = "Hiiri alhaalla sijainnissa X:"
+                         + event.screenX + "Y: " + event.screenY;
+          break;
+        case 'mouseup':
+          elem.style.backgroundColor = "white";
+          elem.innerHTML = "Klikkaa ja pidä hiiri alhaalla";
+          break;
+      }
+    }
+  }
+
+  let valikko = new Valikko();
+  elem.addEventListener('mousedown', valikko);
+  elem.addEventListener('mouseup', valikko);
+</script>>
+
+<h3>Tämä tuhotaan ja korvataan 2 sec kuluttua...</h3>
+<script>
+  setTimeout(() => document.write('<h3>...tällä uudella sisällöllä</h3>'), 2000);
+</script>

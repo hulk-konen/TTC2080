@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul id="demolist">
+<li>Eka</li>
+<li>Toka</li>
+</ul>
+
+<script>
+    let ulnode = document.getElementById("demolist");
+    let linode = document.createElement('li');
+    let litext = document.createTextNode('Koka');
+    linode.appendChild(litext);
+    ulnode.appendChild(linode);
+</script>
+</body>
+</html>

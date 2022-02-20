@@ -1,0 +1,32 @@
+//HTML:
+<p id="elem">mouseover/mouseout/click?</a>
+
+//JS:
+<script>
+function fn1() {
+  elem.style.backgroundColor = "yellow";
+};
+
+function fn2() {
+  elem.style.backgroundColor = "white";
+}
+
+function fn3() {
+  alert('Klikkasit mua');
+};
+
+elem.addEventListener("mouseover", fn1); // tausta keltainen
+elem.addEventListener("mouseout", fn2); // tausta valkoinen
+elem.addEventListener("click", fn3); // alert
+</script>
+
+//HTML:
+
+<p onclick="fn(this)">Klikkaa mua</p>
+
+//JS:
+<script>
+function fn(elem) {
+    elem.innerHTML = "Sähän klikkasit mua!";
+}
+</script>

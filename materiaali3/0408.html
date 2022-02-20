@@ -1,0 +1,20 @@
+// 1. Kaikki toiminta attribuutin arvona
+<button onclick="alert('Klikkasit mua')">Klikkaa</button>
+
+// 2. Kutsu omaan funktioon
+<p onclick="fn('Klikkasit mua')">Klikkaa</p>
+
+<script>
+function fn(teksti) {
+    let infoteksti = "Tekstisi oli: " + teksti;
+    alert(infoteksti);
+}
+</script>
+
+<button id="btn1">Klikkaa</button>
+
+<script>
+btn1.onclick = function() {
+    alert('Klikkasit');
+};
+</script>

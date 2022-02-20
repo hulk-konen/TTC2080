@@ -1,0 +1,21 @@
+//HTML:
+<form>
+  <input type="checkbox" name="numero" value="12"> 12<br>
+  <input type="checkbox" name="numero" value="20"> 20<br>
+  <input type="checkbox" name="numero" value="53"> 53</br>
+    <button id="btn">Klikkaa</button>
+</form>
+
+//JS:
+<script>
+function fn() {
+  let form = document.forms[0]; // Eka ja ainut lomake
+  let numerot = form.elements.numero; // Kaikki "numero"-nimetyt elementit
+  if (numerot[2].checked) { // Kolmas rastitettu
+    alert(numerot[2].value + " checked"); // Kolmannen arvo näytetään
+  } 
+};
+
+btn.addEventListener("click", fn);
+
+</script>
