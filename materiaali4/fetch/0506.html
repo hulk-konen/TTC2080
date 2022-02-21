@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Fetch API Esim 0506</title>
+      <meta charset="utf-8">
+   </head>
+<body>
+   <h1>Fetch API Esim 0506</h1>
+   <div id="demo"></div>
+   <script>
+async function getHighscrores() {
+    let url = 'highscores.json';
+    try {
+        let res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function renderHighscrores() {
+    let highscores = await getHighscrores();
+    console.log(highscores);
+    let ul = '<ul>';
+    highscores.forEach(highscore => {
+        let li = `<li>${highscore.name} : 
+                               ${highscore.score}
+                  </li>`;
+        ul += li;
+    });
+    ul += "</ul>";
+    let demodiv = document.getElementById("demo");
+    demodiv.innerHTML = ul;
+}
+renderHighscrores();
+    </script>      
+</body>
+</html>
