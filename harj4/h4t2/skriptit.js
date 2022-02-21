@@ -11,21 +11,6 @@ async function getHouses() {
 async function renderHouses() {
     let houses = await getHouses();
 
-        var checkBox = document.getElementById("myCheck");
-        var text = document.getElementById("text");
-        if (checkBox.checked == true){
-          text.style.display = "block";
-        } else {
-           text.style.display = "none";
-        }
-
-    houses = filter(function () {
-        return house.price < 1000000;
-    });
-
-    var data_filter = data.filter( house => house.price < 1000000)
-    console.log(data_filter)
-
     console.log(houses);
 
     let housediv = document.getElementById("houses");
