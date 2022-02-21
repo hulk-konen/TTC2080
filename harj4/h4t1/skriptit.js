@@ -38,7 +38,7 @@ async function renderHouses() {
         let hinta = document.createElement('p');
         hinta.className = 'text';
         let numberstr = new Intl.NumberFormat('fi-FI').format(house.price);
-        koko.innerHTML = numberstr;
+        hinta.innerHTML = numberstr;
 
 
        /*
