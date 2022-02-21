@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Promise</title>
+      <meta charset="utf-8">
+   </head>
+<body>
+
+   <script>
+
+let rehti = true
+
+const lupaus = new Promise((resolve, reject) => {
+  if (rehti) {
+    setTimeout(() => resolve("Pidin lupauksen, päätös kesti sekunnin"), 1000);
+  } else {
+    reject("En pystynyt pitämään lupausta")
+  }
+})
+
+const tarkistaLupaus = () => {
+  lupaus
+    .then(ok => {
+      console.log(ok)
+    })
+    .catch(err => {
+      console.error(err)
+    })
+}
+
+tarkistaLupaus();
+
+</script>      
+</body>
+</html>
