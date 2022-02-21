@@ -15,9 +15,8 @@ async function renderHouses() {
         return house.price < 1000000;
     });
 
-    var data_filter = data.filter( element => element.price < 1000000)
+    var data_filter = data.filter( house => house.price < 1000000)
     console.log(data_filter)
-
 
     console.log(houses);
 
