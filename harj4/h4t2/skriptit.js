@@ -13,17 +13,7 @@ async function renderHouses() {
     var nelioCheck = document.getElementById("neliot");
     var euroCheck = document.getElementById("eurot");
 
-    if (nelioCheck.checked == true){
-        console.log("1");
-      } else {
-         console.log("2");
-      }
 
-      if (euroCheck.checked == true){
-        console.log("3");
-      } else {
-         console.log("4");
-      }
     
 
 
@@ -31,7 +21,18 @@ async function renderHouses() {
 
     let housediv = document.getElementById("houses");
 
-    houses.forEach(house => {        
+    houses.forEach(house => {      
+        if (nelioCheck.checked == true){
+            console.log("1");
+          } else {
+             console.log("2");
+          }
+    
+          if (euroCheck.checked == true){
+            console.log("3");
+          } else {
+             console.log("4");
+          }  
 
         housecontainer = document.createElement('div');
         housecontainer.className = 'houseContainer';
