@@ -27,6 +27,10 @@ async function renderHouses() {
         header.className = 'header';
         header.innerHTML = house.address;
 
+        let koko = document.createElement('p');
+        koko.className = 'text';
+        koko.innerHTML = house.size;
+
        /*
              Ohjelmoi tähän toiminnallisuus, jossa luodaan p-elementit
              myös talon koon, tekstikuvauksen ja hinnan näyttämiselle
@@ -37,12 +41,13 @@ async function renderHouses() {
 
         housecontainer.appendChild(image);
         housecontainer.appendChild(header);
+        housecontainer.appendChild(koko);
 
                 /* Ohjelmoi tähän toiminnallisuus, jossa liität edellä
                     luomasi p-elementit myös housecontaineriin
                 */
 
 
-                housediv.appendChild(housecontainer); 
+        housediv.appendChild(housecontainer); 
     });    
 }
