@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Fetch API Esim 0505</title>
+      <meta charset="utf-8">
+   </head>
+<body>
+   <h1>Fetch API Esim 0505</h1>
+   <script>
+
+    async function fetchHighscores() {
+    let response = await fetch('highscores.json');
+    let data = await response.json();
+    console.log(data);
+}
+
+fetchHighscores();
+
+    </script>      
+</body>
+</html>
