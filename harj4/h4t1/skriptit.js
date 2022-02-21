@@ -28,17 +28,17 @@ async function renderHouses() {
         header.innerHTML = house.address;
 
         let koko = document.createElement('p');
-        koko.className = 'text';
-        koko.innerHTML = house.size;
+        koko.className = 'size';
+        koko.innerHTML = house.size + " m2";
 
         let kuvaus = document.createElement('p');
         kuvaus.className = 'text';
-        kuvaus.innerHTML = house.text + "m2";
+        kuvaus.innerHTML = house.text;
 
         let hinta = document.createElement('p');
-        hinta.className = 'text';
+        hinta.className = 'price';
         let numberstr = new Intl.NumberFormat('fi-FI').format(house.price);
-        hinta.innerHTML = numberstr;
+        hinta.innerHTML = numberstr + " euroa";
 
 
        /*
