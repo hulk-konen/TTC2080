@@ -10,6 +10,22 @@ async function getHouses() {
 
 async function renderHouses() {
     let houses = await getHouses();
+    var nelioCheck = document.getElementById("neliot");
+    var euroCheck = document.getElementById("eurot");
+
+    if (nelioCheck.checked == true){
+        console.log("1");
+      } else {
+         console.log("2");
+      }
+
+      if (euroCheck.checked == true){
+        console.log("3");
+      } else {
+         console.log("4");
+      }
+    
+
 
     console.log(houses);
 
