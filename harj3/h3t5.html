@@ -24,26 +24,44 @@ toivottujen toimintojen aikaansaamiseksi
 <script>
 
 function tulostaVari() {  
-   var p = document.getElementById("results");
-   
-   p.innerHTML = valikko.value; // valitun arvo
+    var p = document.getElementById("results");
+
+    p.innerHTML = valikko.value; 
 
 }
 
 function muutaVari() {  
    var div =document.getElementById("alue")
 
-   if (valikko.selectedIndex == 1) { // Toinen vaihtoehto "selected"
+   if (valikko.selectedIndex == 1) { 
+    div.style.backgroundColor = "blue";
+   }
+   if (valikko.selectedIndex == 2) { 
     div.style.backgroundColor = "yellow";
    }
+   if (valikko.selectedIndex == 3) { 
+    div.style.backgroundColor = "red";
+   }
+
 }
 // real time teksti
 
 function tekstitys() {
     let tekstiPaikka = document.getElementById('text-block');
     let tekstiKirjoita = document.getElementById('text-value');
+    var letters = /^[A-Za-z]+$/;
+   
+    if(tekstiKirjoita.value.match(letters))
+    {
+        tekstiPaikka.innerHTML = tekstiKirjoita.value;
+        return true;
+    }
+    else
+    {
+        alert("Vain kirjaimia");
+        return false;
+    }
 
-    tekstiPaikka.innerHTML = tekstiKirjoita.value;
 
 }
 
@@ -54,9 +72,10 @@ function tekstitys() {
 <body>
 <p>Valitse juhlaväri</p>
 <select id="valikko">
-  <option value="Valitse eurot, Please!">Valitse väri</option>
+  <option value="Valitse!">Valitse!</option>
+  <option value="blue">blue</option>
   <option value="yellow">yellow</option>
-  <option value="31">31 euroa</option>
+  <option value="red">red</option>
 </select>
 
 
