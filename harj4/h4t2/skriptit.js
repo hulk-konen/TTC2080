@@ -13,8 +13,6 @@ async function renderHouses() {
     var nelioCheck = document.getElementById("neliot");
     var euroCheck = document.getElementById("eurot");
     
-    console.log(houses);
-
     let housediv = document.getElementById("houses");
     housediv.innerHTML = "";
 
@@ -46,8 +44,8 @@ async function renderHouses() {
         
       } else if (nelioCheck.checked == false && euroCheck.checked == false){
         console.log("1");
-        
-        return filtered = houses;        
+        filtered = houses
+        return filtered;        
       } 
 
 
@@ -77,16 +75,11 @@ async function renderHouses() {
         let numberstr = new Intl.NumberFormat('fi-FI').format(house.price);
         hinta.innerHTML = numberstr + " euroa";
 
-
-
-
         housecontainer.appendChild(image);
         housecontainer.appendChild(header);
         housecontainer.appendChild(koko);
         housecontainer.appendChild(kuvaus);
         housecontainer.appendChild(hinta);
-
-
 
         housediv.appendChild(housecontainer); 
     });    
