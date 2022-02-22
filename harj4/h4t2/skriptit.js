@@ -46,11 +46,12 @@ async function renderHouses() {
         });
         console.log(filtered)
         
-      } else {
-          
+      } 
+
+    if (nelioCheck.checked == false && euroCheck.checked == false){
         console.log("1");
         var filtered = houses;
-        return;        
+        return filtered;        
       } 
 
 
