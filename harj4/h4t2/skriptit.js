@@ -23,7 +23,6 @@ async function renderHouses() {
  
         if (nelioCheck.checked == true && euroCheck.checked == true){
             console.log("1");
-            housediv.innerHTML = "";
 
             var cheapOnly = houses.filter(function (entry) {
             return entry.price < 1000000;
