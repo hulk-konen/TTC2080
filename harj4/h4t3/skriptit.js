@@ -123,7 +123,3 @@ const showList = () => {
 
 showList();
 
-search.addEventListener("input", (event) => {
-  search_term = event.target.value.toLowerCase();
-  showList();
-});
