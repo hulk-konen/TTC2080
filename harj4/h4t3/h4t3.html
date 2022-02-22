@@ -4,12 +4,8 @@
     <title>h4t3</title>
     <meta charset="utf-8">
     <script src="skriptit.js">
-
-
-
     </script>
 
-    
     <link rel="stylesheet" href="styles.css">
 
    </head>
@@ -20,6 +16,9 @@
    <ul id="results"></ul>
 </body>
 <script>
+const search = document.getElementById("search");
+const results = document.getElementById("results");
+let search_term = "";
 
 search.addEventListener("input", (event) => {
   search_term = event.target.value.toLowerCase();
