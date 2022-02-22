@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>h4t3</title>
+    <meta charset="utf-8">
+    <script src="skriptit.js"></script>
+    <script>renderHouses()</script>
+    <link rel="stylesheet" href="styles.css">
+
+   </head>
+<body>
+   <h1>FetchAPI Search Form</h1>
+   <div>
+   <label for="neliot">Alle 200m:</label> 
+   <input type="checkbox" id="neliot" onclick="renderHouses()">
+   </div>
+   <div>
+   <label for="eurot">Alle 1000000 euroa:</label> 
+   <input type="checkbox" id="eurot" onclick="renderHouses()">
+   </div>
+   <div id="houses">
+   </div>
+
+
+
+   <div class="search-form">
+      <form action="#" method="#">
+          <input type="text" class="search_term" autofocus autocomplete="off">
+          <table class="results" border="0"></table>
+      </form>
+  </div>   
+</body>
+</html>
