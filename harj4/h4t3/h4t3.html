@@ -5,12 +5,7 @@
     <meta charset="utf-8">
     <script src="skriptit.js">
 
-showList();
 
-search.addEventListener("input", (event) => {
-  search_term = event.target.value.toLowerCase();
-  showList();
-});
 
     </script>
 
@@ -24,4 +19,12 @@ search.addEventListener("input", (event) => {
 
    <ul id="results"></ul>
 </body>
+<script>
+   showList();
+
+search.addEventListener("input", (event) => {
+  search_term = event.target.value.toLowerCase();
+  showList();
+});
+</script>
 </html>
