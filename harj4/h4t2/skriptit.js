@@ -21,6 +21,9 @@ async function renderHouses() {
         if (nelioCheck.checked == true && euroCheck.checked == true){
             console.log("1");
 
+            housediv.length = 0
+
+
             var yahooOnly = houses.filter(function (entry) {
             return entry.price < 1000000;
             });
