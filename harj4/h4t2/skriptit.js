@@ -21,7 +21,7 @@ async function renderHouses() {
         if (nelioCheck.checked == true){
             console.log("1");
 
-            var yahooOnly = JSON.parse(houses).filter(function (entry) {
+            var yahooOnly = houses.filter(function (entry) {
             return entry.price < 1000000;
             });
             console.log(yahooOnly)
