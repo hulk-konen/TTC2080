@@ -32,7 +32,7 @@ async function renderHouses() {
         console.log("1");
 
         var filtered = houses.filter(function (entry) {
-        return entry.price < 1000000;
+        return entry.size < 200;
         });
         console.log(filtered)
         
@@ -46,11 +46,9 @@ async function renderHouses() {
         });
         console.log(filtered)
         
-      } 
-
-    if (nelioCheck.checked == false && euroCheck.checked == false){
+      } else {
+          
         console.log("1");
-
         var filtered = houses;
         return;        
       } 
