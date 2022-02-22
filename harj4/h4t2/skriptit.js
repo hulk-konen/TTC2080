@@ -18,39 +18,35 @@ async function renderHouses() {
     let housediv = document.getElementById("houses");
     housediv.innerHTML = "";
 
+    var filtered = houses;
+
     if (nelioCheck.checked == true && euroCheck.checked == true){
         console.log("1");
 
-        var filtered = houses.filter(function (entry) {
+        filtered = houses.filter(function (entry) {
         return entry.price < 1000000 && entry.size < 200;
         });
         console.log(filtered)
         
-      } 
-
-    if (nelioCheck.checked == true && euroCheck.checked == false){
+      } else if (nelioCheck.checked == true && euroCheck.checked == false){
         console.log("1");
 
-        var filtered = houses.filter(function (entry) {
+        filtered = houses.filter(function (entry) {
         return entry.size < 200;
         });
         console.log(filtered)
         
-      } 
-
-    if (nelioCheck.checked == false && euroCheck.checked == true){
+      } else if (nelioCheck.checked == false && euroCheck.checked == true){
         console.log("1");
 
-        var filtered = houses.filter(function (entry) {
+        filtered = houses.filter(function (entry) {
         return entry.price < 1000000;
         });
         console.log(filtered)
         
-      } 
-
-    if (nelioCheck.checked == false && euroCheck.checked == false){
+      } else if (nelioCheck.checked == false && euroCheck.checked == false){
         console.log("1");
-        var filtered = houses;
+        
         return filtered;        
       } 
 
