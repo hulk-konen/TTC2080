@@ -18,28 +18,27 @@ async function renderHouses() {
     let housediv = document.getElementById("houses");
     housediv.innerHTML = "";
 
-    let filtered = houses;
+    if (nelioCheck.checked == true && euroCheck.checked == true){
+        console.log("1");
 
-    houses.forEach(house => {     
+        var filtered = houses.filter(function (entry) {
+        return entry.price < 1000000;
+        });
+        console.log(filtered)
+        
+      } else {
+         console.log("2");
+      }
+
+      if (nelioCheck.checked == true && euroCheck.checked == false){
+        console.log("3");
+      } else {
+         console.log("4");
+      }  
+
+
+    filtered.forEach(house => {     
  
-        if (nelioCheck.checked == true && euroCheck.checked == true){
-            console.log("1");
-
-            filtered = houses.filter(function (entry) {
-            return entry.price < 1000000;
-            });
-            console.log(filtered)
-            
-          } else {
-             console.log("2");
-          }
-    
-          if (nelioCheck.checked == true && euroCheck.checked == false){
-            console.log("3");
-          } else {
-             console.log("4");
-          }  
-
         housecontainer = document.createElement('div');
         housecontainer.className = 'houseContainer';
 
