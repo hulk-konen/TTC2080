@@ -16,7 +16,7 @@ async function renderHouses() {
     console.log(houses);
 
     let housediv = document.getElementById("houses");
-
+    let filtered = houses;
 
     houses.forEach(house => {     
  
@@ -24,10 +24,10 @@ async function renderHouses() {
             console.log("1");
             housediv.innerHTML = "";
 
-            var cheapOnly = houses.filter(function (entry) {
+            filtered = houses.filter(function (entry) {
             return entry.price < 1000000;
             });
-            console.log(cheapOnly)
+            console.log(filtered)
             
           } else {
              console.log("2");
@@ -43,24 +43,24 @@ async function renderHouses() {
         housecontainer.className = 'houseContainer';
 
         let image = document.createElement('img');
-        image.src = house.image;
+        image.src = filtered.image;
         image.className = 'houseImage';
 
         let header = document.createElement('p');
         header.className = 'header';
-        header.innerHTML = house.address;
+        header.innerHTML = filtered.address;
 
         let koko = document.createElement('p');
         koko.className = 'size';
-        koko.innerHTML = house.size + " m2";
+        koko.innerHTML = filtered.size + " m2";
 
         let kuvaus = document.createElement('p');
         kuvaus.className = 'text';
-        kuvaus.innerHTML = house.text;
+        kuvaus.innerHTML = filtered.text;
 
         let hinta = document.createElement('p');
         hinta.className = 'price';
-        let numberstr = new Intl.NumberFormat('fi-FI').format(house.price);
+        let numberstr = new Intl.NumberFormat('fi-FI').format(filtered.price);
         hinta.innerHTML = numberstr + " euroa";
 
 
