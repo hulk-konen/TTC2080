@@ -3,18 +3,25 @@
    <head>
     <title>h4t3</title>
     <meta charset="utf-8">
-    <script src="skriptit.js"></script>
-    <script>renderSearch()</script>
+    <script src="skriptit.js">
+
+showList();
+
+search.addEventListener("input", (event) => {
+  search_term = event.target.value.toLowerCase();
+  showList();
+});
+
+    </script>
+
+    
     <link rel="stylesheet" href="styles.css">
 
    </head>
 <body>
    <h1>FetchAPI Search Form</h1>
-   <div id="searchArea">
-      <label for="search">Live Search </label>
-      Enter name/info to start the search
-      <input type="search" placeholder="enter name/info" name="search" id="search">
-      </div>
-      <div id="update"></div>
+   <input autocomplete="off" type="search" id="search" placeholder="Kirjoita nimi" />
+
+   <ul id="results"></ul>
 </body>
 </html>
