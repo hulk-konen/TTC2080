@@ -1,6 +1,6 @@
 
 
-$('#search').keyup(function(){
+renderSearch.keyup(function(){
   var searchField = $('#search').val();
   var myExp = new RegExp(searchField, "i");
   $.getJSON('nimet.json', function(data){
