@@ -19,7 +19,6 @@ async function renderHouses() {
     var filtered = houses;
 
     if (nelioCheck.checked == true && euroCheck.checked == true){
-        console.log("1");
 
         filtered = houses.filter(function (entry) {
         return entry.price < 1000000 && entry.size < 200;
@@ -27,7 +26,6 @@ async function renderHouses() {
         console.log(filtered)
         
       } else if (nelioCheck.checked == true && euroCheck.checked == false){
-        console.log("1");
 
         filtered = houses.filter(function (entry) {
         return entry.size < 200;
@@ -35,7 +33,6 @@ async function renderHouses() {
         console.log(filtered)
         
       } else if (nelioCheck.checked == false && euroCheck.checked == true){
-        console.log("1");
 
         filtered = houses.filter(function (entry) {
         return entry.price < 1000000;
@@ -44,8 +41,9 @@ async function renderHouses() {
         
       } else if (nelioCheck.checked == false && euroCheck.checked == false){
         console.log("1");
-        filtered = houses;
-        return filtered;        
+        filtered .filter(function (entry) {
+        return entry.size > 0;
+        });       
       } 
 
 
