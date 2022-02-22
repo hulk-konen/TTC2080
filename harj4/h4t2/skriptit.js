@@ -12,11 +12,7 @@ async function renderHouses() {
     let houses = await getHouses();
     var nelioCheck = document.getElementById("neliot");
     var euroCheck = document.getElementById("eurot");
-
-
     
-
-
     console.log(houses);
 
     let housediv = document.getElementById("houses");
@@ -24,6 +20,12 @@ async function renderHouses() {
     houses.forEach(house => {      
         if (nelioCheck.checked == true){
             console.log("1");
+
+            var yahooOnly = JSON.parse(houses).filter(function (entry) {
+            return entry.price < 1000000;
+            });
+            console.log(yahooOnly)
+            
           } else {
              console.log("2");
           }
