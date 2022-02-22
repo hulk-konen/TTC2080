@@ -21,7 +21,7 @@ async function renderHouses() {
         if (nelioCheck.checked == true && euroCheck.checked == true){
             console.log("1");
 
-            housediv.length = 0
+            housediv.innerHTML = "";
 
 
             var yahooOnly = houses.filter(function (entry) {
