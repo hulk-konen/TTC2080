@@ -16,18 +16,18 @@ async function renderHouses() {
     console.log(houses);
 
     let housediv = document.getElementById("houses");
-    housediv.innerHTML = "";
 
 
     houses.forEach(house => {     
  
         if (nelioCheck.checked == true && euroCheck.checked == true){
             console.log("1");
+            housediv.innerHTML = "";
 
-            houses = houses.filter(function (entry) {
+            var cheapOnly = houses.filter(function (entry) {
             return entry.price < 1000000;
             });
-            console.log(houses)
+            console.log(cheapOnly)
             
           } else {
              console.log("2");
