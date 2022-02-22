@@ -18,7 +18,7 @@ async function renderHouses() {
     let housediv = document.getElementById("houses");
 
     houses.forEach(house => {      
-        if (nelioCheck.checked == true){
+        if (nelioCheck.checked == true && euroCheck.checked == true){
             console.log("1");
 
             var yahooOnly = houses.filter(function (entry) {
@@ -30,7 +30,7 @@ async function renderHouses() {
              console.log("2");
           }
     
-          if (euroCheck.checked == true){
+          if (nelioCheck.checked == true && euroCheck.checked == false){
             console.log("3");
           } else {
              console.log("4");
