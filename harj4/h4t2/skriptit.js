@@ -24,10 +24,10 @@ async function renderHouses() {
         if (nelioCheck.checked == true && euroCheck.checked == true){
             console.log("1");
 
-            var cheapOnly = houses.filter(function (entry) {
+            houses = houses.filter(function (entry) {
             return entry.price < 1000000;
             });
-            console.log(cheapOnly)
+            console.log(houses)
             
           } else {
              console.log("2");
