@@ -26,9 +26,7 @@ async function renderHouses() {
         });
         console.log(filtered)
         
-      } else {
-         console.log("2");
-      }
+      } 
 
     if (nelioCheck.checked == true && euroCheck.checked == false){
         console.log("1");
@@ -38,11 +36,9 @@ async function renderHouses() {
         });
         console.log(filtered)
         
-      } else {
-         console.log("2");
-      }
+      } 
 
-    if (nelioCheck.checked == true && euroCheck.checked == true){
+    if (nelioCheck.checked == false && euroCheck.checked == true){
         console.log("1");
 
         var filtered = houses.filter(function (entry) {
@@ -50,22 +46,14 @@ async function renderHouses() {
         });
         console.log(filtered)
         
-      } else {
-         console.log("2");
-      }
+      } 
 
-      if (nelioCheck.checked == true && euroCheck.checked == true){
+    if (nelioCheck.checked == false && euroCheck.checked == false){
         console.log("1");
 
-        var filtered = houses.filter(function (entry) {
-        return entry.price < 1000000;
-        });
-        console.log(filtered)
-        
-      } else {
-         console.log("2");
-      }
-
+        var filtered = houses;
+        return;        
+      } 
 
 
     filtered.forEach(house => {     
