@@ -47,7 +47,7 @@ async function renderHouses() {
       } else if (nelioCheck.checked == false && euroCheck.checked == false){
         console.log("1");
         
-        return filtered;        
+        return filtered = houses;        
       } 
 
 
