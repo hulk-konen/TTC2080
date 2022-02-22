@@ -101,9 +101,7 @@ const data = [
   { name: "Hiroko", country: "Kenya" }
 ];
 
-const search = document.getElementById("search");
-const results = document.getElementById("results");
-let search_term = "";
+
 
 const showList = () => {
   results.innerHTML = "";
