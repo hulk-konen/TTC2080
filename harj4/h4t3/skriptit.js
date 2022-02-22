@@ -102,6 +102,7 @@ const data = [
 ];
 
 
+const results = document.getElementById("results");
 
 const showList = () => {
   results.innerHTML = "";
