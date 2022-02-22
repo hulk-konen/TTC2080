@@ -10,24 +10,11 @@
    </head>
 <body>
    <h1>FetchAPI Search Form</h1>
-   <div>
-   <label for="neliot">Alle 200m:</label> 
-   <input type="checkbox" id="neliot" onclick="renderHouses()">
-   </div>
-   <div>
-   <label for="eurot">Alle 1000000 euroa:</label> 
-   <input type="checkbox" id="eurot" onclick="renderHouses()">
-   </div>
-   <div id="houses">
-   </div>
-
-
-
-   <div class="search-form">
-      <form action="#" method="#">
-          <input type="text" class="search_term" autofocus autocomplete="off">
-          <table class="results" border="0"></table>
-      </form>
-  </div>   
+   <div id="searchArea">
+      <label for="search">Live Search </label>
+      Enter name/info to start the search
+      <input type="search" placeholder="enter name/info" name="search" id="search">
+      </div>
+      <div id="update"></div>
 </body>
 </html>
