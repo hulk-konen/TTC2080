@@ -101,7 +101,6 @@ const data = [
   { name: "Hiroko", country: "Kenya" }
 ];
 
-const results = document.getElementById("results");
 
 
 const showList = () => {
