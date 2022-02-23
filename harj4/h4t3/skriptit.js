@@ -9,9 +9,8 @@ async function getNames() {
   }
 }
 
-let data =  await getNames();
-
 const showList = () => {
+  let data =  await getNames();
   results.innerHTML = "";
   data
     .filter((item) => {
