@@ -14,7 +14,7 @@ async function showList() {
   results.innerHTML = "";
   data
     .filter((item) => {
-      return item.toLowerCase().includes(search_term)
+      return item.toLowerCase().includes(search_term, 0)
     })
     .forEach((e) => {
       const li = document.createElement("li");
