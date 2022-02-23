@@ -9,7 +9,7 @@ async function getNames() {
   }
 }
 
-const showList = () => {
+async function showList() {
   let data =  await getNames();
   results.innerHTML = "";
   data
