@@ -16,3 +16,6 @@ ul {
   align-items: left;
   padding: 0;
 }
+li.selected {
+  background: yellow
+}
