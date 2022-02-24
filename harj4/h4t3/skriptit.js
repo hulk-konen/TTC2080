@@ -31,7 +31,8 @@ var ul = document.getElementById('results');
 var liSelected;
 var index = -1;
 
-document.addEventListener('keydown', function(event) {
+ 
+function keltaistus() {
   var len = ul.getElementsByTagName('li').length - 1;
   if (event.which === 40) {
     index++;
@@ -75,7 +76,7 @@ document.addEventListener('keydown', function(event) {
       addClass(liSelected, 'selected');
     }
   }
-}, false);
+};
 
 function removeClass(el, className) {
   if (el.classList) {
