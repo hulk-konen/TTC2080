@@ -63,7 +63,7 @@ async function loadTodos() {
   async function addTodo() {
     let newTodo = document.getElementById('newTodo')
     const data = { 'text': newTodo.value }
-    const response = await fetch('http://localhost:3000/todos', {
+    const response = await fetch('https://harjo8.onrender.com/todos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ async function loadTodos() {
   }
   
   async function removeTodo(id) {
-    const response = await fetch('http://localhost:3000/todos/'+id, {
+    const response = await fetch('https://harjo8.onrender.com/todos'+id, {
       method: 'DELETE'
     })
     let responseJson = await response.json()
