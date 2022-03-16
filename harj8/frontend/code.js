@@ -81,7 +81,7 @@ async function loadTodos() {
   }
   
   async function removeTodo(id) {
-    const response = await fetch('https://harjo8.onrender.com/todos'+id, {
+    const response = await fetch('https://harjo8.onrender.com/todos/'+id, {
       method: 'DELETE'
     })
     let responseJson = await response.json()
