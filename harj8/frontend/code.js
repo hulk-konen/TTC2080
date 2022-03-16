@@ -5,7 +5,7 @@ function init() {
   }
 
 async function loadTodos() {
-    let response = await fetch('http://localhost:3000/todos')
+    let response = await fetch('https://harjo8.onrender.com/todos')
     let todos = await response.json()
       console.log(todos)
     showTodos(todos)
