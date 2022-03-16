@@ -1,18 +1,20 @@
 body {
     font-family: 'Oswald', sans-serif;
+    background-color: black;
   }
   
   #container {
     width: 420px;
-    background-color:aliceblue;
+    background-color:black;
     border-radius: 3px;
     padding: 0px 15px 0px 15px;
     margin: 10px auto;
     border: 1px solid #ddd;
+    color: hotpink;
   }
   
   h1 {
-    background-color: cadetblue;
+    background-color: black;
     text-align: center;
     color: white;
     padding: 5px;
@@ -21,6 +23,7 @@ body {
   ul {
     list-style-type: square;
     margin: 20px 0 20px 0;
+    color:green;
   }
   
   input[type=text] {
