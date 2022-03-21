@@ -1,5 +1,6 @@
 function init() {
     let infoText = document.getElementById('infoText')
+    document.getElementById("edit").style.display="none";
     infoText.innerHTML = 'Ladataan tehtävälista palvelimelta, odota...'
     loadTodos()
   }
@@ -24,10 +25,31 @@ async function loadTodos() {
     let text = document.createTextNode(todo.text)
       // lisätään teksti LI-elementtiin
     li.appendChild(text)
-      // luodaan uusi SPAN-elementti, käytännössä x-kirjan, jotta tehtävä saadaan poistettua
-    let span = document.createElement('span')
+
+
+          // luodaan uusi SPAN-elementti, käytännössä x-kirjan, jotta tehtävä saadaan poistettua
+    let span = document.createElement('update')
       // luodaan uusi class-attribuutti
     let span_attr = document.createAttribute('class')
+      // kiinnitetään attribuuttiin delete-arvo, ts. class="delete", jotta saadaan tyylit tähän kiinni
+    span_attr.value = 'update'
+      // kiinnitetään SPAN-elementtiin yo. attribuutti
+    span.setAttributeNode(span_attr)
+      // luodaan tekstisolmu arvolla x
+    let u = document.createTextNode(' Edit ')
+      // kiinnitetään x-tekstisolmu SPAN-elementtiin (näkyville)
+    span.appendChild(u)
+      // määritetään SPAN-elementin onclick-tapahtuma kutsumaan removeTodo-funkiota
+    span.onclick = function() { startEdit(todo._id) }
+      // lisätään SPAN-elementti LI-elementtin
+    li.appendChild(span)
+      // palautetaan luotu LI-elementti
+      // on siis muotoa: <li>Muista soittaa...<span class="remove">x</span></li>
+
+      // luodaan uusi SPAN-elementti, käytännössä x-kirjan, jotta tehtävä saadaan poistettua
+    span = document.createElement('span')
+      // luodaan uusi class-attribuutti
+    span_attr = document.createAttribute('class')
       // kiinnitetään attribuuttiin delete-arvo, ts. class="delete", jotta saadaan tyylit tähän kiinni
     span_attr.value = 'delete'
       // kiinnitetään SPAN-elementtiin yo. attribuutti
@@ -42,6 +64,9 @@ async function loadTodos() {
     li.appendChild(span)
       // palautetaan luotu LI-elementti
       // on siis muotoa: <li>Muista soittaa...<span class="remove">x</span></li>
+    
+        
+
     return li
   }
 
@@ -81,6 +106,8 @@ async function loadTodos() {
   }
   
   async function removeTodo(id) {
+    console.log(id)
+
     const response = await fetch('https://harjo8.onrender.com/todos/'+id, {
       method: 'DELETE'
     })
@@ -93,4 +120,49 @@ async function loadTodos() {
       let infoText = document.getElementById('infoText')
       infoText.innerHTML = 'Ei tehtäviä'
     }
+  }
+
+  async function startEdit(id) {
+    const response = await fetch('https://harjo8.onrender.com/todos/'+id)
+    let todo = await response.json()
+    newTodo.value = todo.text
+    document.getElementById("edit").style.display="inline";
+    document.getElementById("add").style.display="none";
+    globalID = id;
+    return globalID
+  }
+  // update user data
+  async function editTodo(id) {
+    let updatedTodo = document.getElementById('newTodo')
+    const data = { 'text': updatedTodo.value }
+    id = globalID
+    //document.getElementById("newTodo").value = "Test";
+
+    const response = await fetch('https://harjo8.onrender.com/todos/'+id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      
+      body: JSON.stringify(data)
+
+    })
+    console.log(response)
+    let todo = await response.json()
+    let todosList = document.getElementById('todosList')
+    let li = createTodoListItem(todo)
+    todosList.appendChild(li)
+    
+    let infoText = document.getElementById('infoText')
+    infoText.innerHTML = ''
+    newTodo.value = ''
+    while(todosList.hasChildNodes()) {
+      todosList.removeChild(todosList.firstChild);
+  }
+    loadTodos()
+    document.getElementById("edit").style.display="none";
+    document.getElementById("add").style.display="inline";
+    console.log(todo)
+
+    
   }
