@@ -1,4 +1,4 @@
-const moduuli = require('./user')
+const moduuli = require('./user.js')
 
 
 

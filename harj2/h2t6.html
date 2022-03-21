@@ -1,4 +1,3 @@
-fiksaa oletusarvot
 <!--
 Toteuta JavaScriptillä oheisen kuvan mukainen 
 vauhtilaskin. Ohjelma laskee syötettyjen arvojen
@@ -58,7 +57,7 @@ Tehtävä palautetaan osoittamalla URL toimivaan ohjelmaan
 <script>
 
 class Vauhtilaskin {
-    constructor(h = 0, min = 0, sec, km){
+    constructor(h, min, sec, km){
     this.h = h;
     this.min = min;
     this.sec = sec;
@@ -118,10 +117,10 @@ function laskuri(t, m, s, k) {
 <body>  
     <h1>Vauhtilaskin</h1>
     <form id="f">
-        Tunnit: <input type=text id="h"><br>
-        Minuutit: <input type=text id="min"><br>
-        Sekunnit: <input type=text id="sec"><br>
-        Kilometrit: <input type=text id="km"><br>
+        Tunnit: <input type=text id="h" value="0"><br>
+        Minuutit: <input type=text id="min"value="0" ><br>
+        Sekunnit: <input type=text id="sec" value="0"><br>
+        Kilometrit: <input type=text id="km" value="0"><br>
         <button type="button" onclick="laskuri(f.h.value, f.min.value, f.sec.value, f.km.value)">Laske vauhdit</button>
      </form>
     
