@@ -42,7 +42,12 @@ body {
   }
 
   #edit {
-  background-color: yellow;
+    border: 1px solid #ccc;
+    margin-left: 15px;
+    padding: 5px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: yellow;
   }
   
   .delete {
