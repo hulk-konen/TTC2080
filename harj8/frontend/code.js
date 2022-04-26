@@ -8,7 +8,7 @@ function init() {
 async function loadTodos() {
     let response = await fetch('https://harjo8.onrender.com/todos')
     let todos = await response.json()
-      console.log(todos)
+    console.log(todos)
     showTodos(todos)
   }
 
@@ -121,7 +121,7 @@ async function loadTodos() {
       infoText.innerHTML = 'Ei tehtäviä'
     }
   }
-  
+
   async function startEdit(id) {
     const response = await fetch('https://harjo8.onrender.com/todos/'+id)
     let todo = await response.json()

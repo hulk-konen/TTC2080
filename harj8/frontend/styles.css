@@ -40,6 +40,10 @@ body {
     font-size: 15px;
     cursor: pointer;
   }
+
+  #edit {
+  background-color: yellow;
+  }
   
   .delete {
     cursor: pointer;
