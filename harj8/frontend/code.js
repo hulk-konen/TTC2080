@@ -105,7 +105,23 @@ async function loadTodos() {
     newTodo.value = ''
   }
   
+  async function removeTodo(id) {
+    console.log(id)
 
+    const response = await fetch('https://harjo8.onrender.com/todos/'+id, {
+      method: 'DELETE'
+    })
+    let responseJson = await response.json()
+    let li = document.getElementById(id)
+    li.parentNode.removeChild(li)
+
+    let todosList = document.getElementById('todosList')
+    if (!todosList.hasChildNodes()) {
+      let infoText = document.getElementById('infoText')
+      infoText.innerHTML = 'Ei tehtäviä'
+    }
+  }
+  
   async function startEdit(id) {
     const response = await fetch('https://harjo8.onrender.com/todos/'+id)
     let todo = await response.json()
