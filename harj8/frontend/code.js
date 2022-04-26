@@ -126,8 +126,8 @@ async function loadTodos() {
     const response = await fetch('https://harjo8.onrender.com/todos/'+id)
     let todo = await response.json()
     newTodo.value = todo.text
-    document.getElementById("edit").style.display="inline";
     document.getElementById("add").style.display="none";
+    document.getElementById("edit").style.display="inline";
     globalID = id;
     return globalID
   }
