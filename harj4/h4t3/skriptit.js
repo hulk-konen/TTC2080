@@ -12,21 +12,24 @@ async function getNames() {
 async function showList() {
   let data =  await getNames();
   results.innerHTML = "";
-  data
-    .filter((item) => {
-      return item.toLowerCase().includes(search_term, 0)
-    })
-    .forEach((e) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<i>Name:</i> ${e}`;
-      results.appendChild(li);
-    });
+  if (search_term.length === 0) {
+    results.innerHTML = "";
+  } else {    
+    // tekee listan
+    data
+      .filter((item) => {
+        return item.toLowerCase().includes(search_term, 0)
+      })
+      .forEach((e) => {
+        const li = document.createElement("li");
+        li.innerHTML = e;
+        results.appendChild(li);
+      });
 };
-
+}
 showList();
 
-
-
+ /*
 var ul = document.getElementById('results');
 var liSelected;
 var index = -1;
@@ -93,3 +96,4 @@ function addClass(el, className) {
     el.className += ' ' + className;
   }
 };
+*/
