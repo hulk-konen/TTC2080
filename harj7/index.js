@@ -67,8 +67,8 @@ Add a new user: <input type=text name=nimi><br>
   response.send(htmlform)
 })
 
-app.get('/list', (request, response, next) => {
-  
+app.get('/list', async (request, response, next) => {
+  const users = await User.find({})
   let result = '<a href="/list">List users</a> | <a href="/add">Add user</a><table>  <thead><tr><td><b>ID</b></td><td><b>Nimi</b></td></tr></thead>';
   for (let user in users) {
     result += "<tr><td>" + users[user].id + "</td><td>" + users[user].name + "</td></tr>";
@@ -79,12 +79,12 @@ app.get('/list', (request, response, next) => {
   }
 
 )
-
+//en käytä tätä
 // get all users
-app.get('/users', async (request, response) => {
-  const users = await User.find({})
-  response.json(users)
-})
+//app.get('/users', async (request, response) => {
+//  const users = await User.find({})
+//  response.json(users)
+//})
 
 // get one user
 app.get('/users/:id', async (request, response) => {
@@ -117,9 +117,17 @@ app.put('/users/:id', (request, response) => {
 
 // create a new user
 app.post('/users', async (request, response) => {
-  // Get name from request
-  const { name } = request.body
 
+
+
+  //const maxId = Math.max(...users.map(user => user.id), 0)
+  //const user = request.body
+  //user.id = (maxId+1).toString()
+  //user.name = request.body.nimi 
+  //users = users.concat(user) 
+  // Get name from request
+  const name = request.body.nimi
+  console.log(name)
   // Create a new user
   const user = new User({
     name: name
@@ -127,8 +135,12 @@ app.post('/users', async (request, response) => {
 
   // Save to db and send back to caller
   const savedUser = await user.save()
-  response.json(savedUser)  
+  //response.json(savedUser)  
+  response.redirect('/list');
+
 })
+
+
 
 
 app.listen(port, () => {
