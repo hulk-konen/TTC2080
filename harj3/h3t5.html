@@ -19,20 +19,14 @@ toivottujen toimintojen aikaansaamiseksi
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Todo</title>
-
+    <title>Juhlat</title>
 <script>
-
 function tulostaVari() {  
     var p = document.getElementById("results");
-
     p.innerHTML = valikko.value; 
-
 }
-
 function muutaVari() {  
    var div =document.getElementById("alue")
-
    if (valikko.selectedIndex == 1) { 
     div.style.backgroundColor = "blue";
    }
@@ -42,15 +36,12 @@ function muutaVari() {
    if (valikko.selectedIndex == 3) { 
     div.style.backgroundColor = "red";
    }
-
 }
 // real time teksti
-
 function tekstitys() {
     let tekstiPaikka = document.getElementById('text-block');
     let tekstiKirjoita = document.getElementById('text-value');
-    var letters = /^[A-Za-z]+$/;
-   
+    var letters = /^[A-Z|a-z|Å|å|Ä|ä|Ö|ö]+$/;
     if(tekstiKirjoita.value.match(letters))
     {
         tekstiPaikka.innerHTML = tekstiKirjoita.value;
@@ -61,13 +52,8 @@ function tekstitys() {
         alert("Vain kirjaimia");
         return false;
     }
-
-
 }
-
-
 </script>
-
 </head>
 <body>
 <p>Valitse juhlaväri</p>
@@ -77,8 +63,6 @@ function tekstitys() {
   <option value="yellow">yellow</option>
   <option value="red">red</option>
 </select>
-
-
 <p>Mikä juhla</p>
 <form id="f">
 <input type="text" id="text-value">
@@ -88,26 +72,19 @@ function tekstitys() {
 
 </button> 
  -->
-
 <button onclick="muutaVari()" style="margin: 10px 0">
     Vaihda valittu taustaväri
 </button>
-
 <div id="alue" style="border: 1px dotted blue; padding: 30px;">
 Tulostusalue
-
 <p id="text-block"></p>
 <p id="results"></p>
-
-
 </div>
 </body>
 <script>
 var teksti = document.getElementById('f');
 teksti.addEventListener('keyup', tekstitys);
-
 var variTeksti = document.getElementById('valikko');
 variTeksti.addEventListener('change', tulostaVari);
-
 </script>
 </html>
